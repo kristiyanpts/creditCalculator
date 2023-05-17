@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="credit.js" type="module"></script>
+    <title>Credit Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-field">
+        <div class="input-container">
+          <p class="input-p">I want a loan</p>
+          <div class="values">
+            <input
+              type="range"
+              class="slider"
+              min="1000"
+              max="25000"
+              value="80000"
+              id="loan-amount-slider"
+            />
+
+            <input type="text" id="loan-amount" class="loan-amt" />
+          </div>
+
+          <p class="input-p">I want to repay loan</p>
+          <div class="values">
+            <input
+              type="range"
+              id="loan-months-slider"
+              class="slider"
+              min="1"
+              max="100"
+              value="50"
+            />
+            <input type="number" id="loan-months" class="loan-amt" />
+          </div>
+        </div>
+      </div>
+
+      <div class="output-field">
+        <div class="salary-loan loan">
+          <div class="output-title">Salary-secured Loan</div>
+          <div class="output-value bottom-border">
+            <div class="value-title">Monthly installment</div>
+            <div class="value-amount">
+              <span id="monthly-ins">200.00</span>
+              <span style="font-size: 20px">leva/month</span>
+            </div>
+          </div>
+          <div class="output-value">
+            <div class="value-title">APR%</div>
+            <div class="value-amount no-flex"><span id="apr">5.00</span>%</div>
+          </div>
+          <div class="output-value">
+            <div class="value-title">Variable Interest Rate:</div>
+            <div class="value-amount no-flex"><span id="vir">5.00</span>%</div>
+          </div>
+          <div class="output-value">
+            <div class="value-title">Total Amount Due:</div>
+            <div class="value-amount no-flex">
+              <span id="total-amount">39 000</span> leva
+            </div>
+          </div>
+        </div>
+
+        <div class="non-salary-loan loan">
+          <div class="output-title">Non Salary-secured Loan</div>
+          <div class="output-value bottom-border">
+            <div class="value-title">Monthly installment</div>
+            <div class="value-amount">
+              <span id="monthly-ins">200.00</span>
+              <span style="font-size: 20px">leva/month</span>
+            </div>
+          </div>
+          <div class="output-value">
+            <div class="value-title">APR%</div>
+            <div class="value-amount no-flex"><span id="apr">5.00</span>%</div>
+          </div>
+          <div class="output-value">
+            <div class="value-title">Variable Interest Rate:</div>
+            <div class="value-amount no-flex"><span id="vir">5.00</span>%</div>
+          </div>
+          <div class="output-value">
+            <div class="value-title">Total Amount Due:</div>
+            <div class="value-amount no-flex">
+              <span id="total-amount">39 000</span> leva
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
