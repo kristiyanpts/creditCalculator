@@ -21,12 +21,35 @@ function calculateCredit(e) {
 
   let creditAmount = Number(loanAmount.value);
   let creditMonths = Number(loanMonths.value);
-  let salaryInterestRate = 4.99;
-  let nonSalaryInterestRate = 6.29;
-  let fees = creditAmount * 4.5;
+  let salaryInterestRate = 4.99 / 100;
+  let nonSalaryInterestRate = 6.29 / 100;
+  let fees = creditMonths * 4.5;
+  let monthlyPaymentSalary =
+    (creditAmount *
+      (salaryInterestRate * (1 + salaryInterestRate) ** creditMonths)) /
+    ((1 + salaryInterestRate) ** creditMonths - 1);
+  let monthlyPaymentNonSalary =
+    (creditAmount *
+      (nonSalaryInterestRate * (1 + nonSalaryInterestRate) ** creditMonths)) /
+    ((1 + nonSalaryInterestRate) ** creditMonths - 1);
+  let totalAmountSalary = creditMonths * monthlyPaymentSalary + fees;
+  let totalAmountNonSalary = creditMonths * monthlyPaymentNonSalary + fees;
+  let aprSalary = ((totalAmountSalary - creditAmount) / creditAmount) * 100;
+  let aprNonSalary =
+    ((totalAmountNonSalary - creditAmount) / creditAmount) * 100;
 
-  let apr = (1 + salaryInterestRate) ** 12 - 1;
-  console.log(apr);
+  document.querySelector(".salary-loan #monthly-ins").textContent =
+    monthlyPaymentSalary.toFixed(2);
+  document.querySelector(".non-salary-loan #monthly-ins").textContent =
+    monthlyPaymentNonSalary.toFixed(2);
+  document.querySelector(".salary-loan #apr").textContent =
+    aprSalary.toFixed(2);
+  document.querySelector(".non-salary-loan #apr").textContent =
+    aprNonSalary.toFixed(2);
+  document.querySelector(".salary-loan #total-amount").textContent =
+    totalAmountSalary.toFixed(2);
+  document.querySelector(".non-salary-loan #total-amount").textContent =
+    totalAmountNonSalary.toFixed(2);
 }
 
 function setOtherValues(value) {}

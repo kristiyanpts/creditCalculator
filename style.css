@@ -7,8 +7,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: pink;
+  flex-direction: column;
+  /* background-color: pink; */
   font-family: "Source Sans Pro", sans-serif;
+}
+
+h1 {
+  position: absolute;
+  color: darkblue;
+  top: 0;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+h2 {
+  position: absolute;
+  color: darkblue;
+  bottom: 0;
+  font-weight: 700;
+  font-size: 40px;
 }
 
 .container {
@@ -76,7 +93,7 @@ body {
 
 .no-flex {
   flex-direction: row;
-  gap: 1vh;
+  gap: 2px;
 }
 
 .bottom-border {
